@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div wm-slider>
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg"
+        alt="Muro da cidade"
+        width="513" height="342" 
+        title="Muro da Cidade por Tarso Besso">
+    </p>
+
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem2.gif"
+        alt="Intro Cod3r"
+        width="513" height="342" 
+        title="Muro da Cidade por Tarso Besso">
+    </p>
+
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem3.png"
+        class="circular"
+
+        title="Muro da Cidade por Tarso Besso">
+    </p>
+
+    <p class="texto">
+        <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" 
+        alt="Avatar" height="50" align-text="left">
+        Texto aleatório para testar as as
+            sa 
+
+            as 
+            sasssssssssssfaf asf asf ads asrewr 4trg 54tg 54hr4t5yhn rtyhn56 6gh5654h6gvb4 56gb45etb45yb 45y67b 
+        
+    </p> 
+
+    <p class="cidade"></p>
+
+    <p>
+        <picture>
+            <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png" media="(min-width:600px)">
+                <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png">
+        </picture>
+    </p>
+
+    <style>
+
+        wm-slider {
+            display: block;
+            margin: auto;
+            transition: 0.2s;
+        }
+
+        
+        p {
+            position: absolute;
+        }
+
+        .circular {
+            width: 513px;
+        }
+
+        .texto {
+            width: 400px;
+        }
+
+        .texto img {
+            margin-right: 10px;
+        }
+
+        .cidade {
+            width: 513px;
+            height: 342px;
+            background-image: url('http://files.cod3r.com.br/curso-web/imagem4.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 200%;
+        }
+
+    </style>
+</div>
+
+<script>
+    function mover(elem, inicio, fim, passo, callback){
+        const novoInicio = inicio - passo
+        if (novoInicio >= fim) {
+            elem.style.left = novoInicio + 'px'
+            setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 7) } else {
+                callback()
+            }
+        }
+
+    const p = document.querySelector('[wm-slider] > p')
+    p.style.display = 'block'
+    mover(p, 1500, -400, 5, () => {console.log('Terminou!!!')})
+
+</script>
+
+</body>
