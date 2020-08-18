@@ -16,3 +16,5 @@ app.post('/usuarios/:id', (req, resp) => {
 })
 
 app.listen(3003)
+
+// http-server -p3030 -c-1 rodar o servidor no index.html
