@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
 <div wm-slider>
     <p>
         <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg"
@@ -50,15 +42,10 @@
 
     <style>
 
-        wm-slider {
-            display: block;
-            margin: auto;
-            transition: 0.2s;
-        }
-
         
         p {
             position: absolute;
+            display: none;
         }
 
         .circular {
@@ -90,15 +77,14 @@
         const novoInicio = inicio - passo
         if (novoInicio >= fim) {
             elem.style.left = novoInicio + 'px'
-            setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 7) } else {
+            setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 7) 
+        } else {
                 callback()
-            }
         }
+    }
 
-    const p = document.querySelector('[wm-slider] > p')
-    p.style.display = 'block'
-    mover(p, 1500, -400, 5, () => {console.log('Terminou!!!')})
+    // const p = document.querySelector('[wm-slider] > p')
+    // p.style.display = 'block'
+    // mover(p, 1500, -520, 5, () => {console.log('Terminou!!!')})
 
 </script>
-
-</body>
